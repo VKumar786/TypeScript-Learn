@@ -1,0 +1,19 @@
+.sm {
+    font-size: 9px;
+}
+
+.md {
+    font-size: 14px;
+}
+
+.lg {
+    font-size: 20px;
+}
+
+.primary {
+    color: red;
+}
+
+.secondary {
+    color: green;
+}
