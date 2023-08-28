@@ -31,7 +31,7 @@ type NegativeNumber = RandomNumberType & {
 type Zero = RandomNumberType & {
   isPositive?: never;
   isNegative?: never;
-  isZero?: boolean;
+  isZero: boolean;
 };
 
 export default RandomNumber1;
