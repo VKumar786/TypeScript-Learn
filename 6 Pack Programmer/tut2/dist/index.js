@@ -41,7 +41,7 @@ const obj = {
     gender: false,
 };
 /*
-    ? Interface
+    TODO: Interface
     * it can be extended that is reason why it is used with classes
 */
 const obj1 = {
@@ -54,7 +54,7 @@ const obj2 = {
     weight: 5,
 };
 /*
-    ? Optional Value
+  TODO:  Optional Value
  */
 const obj4 = (a, b, l) => {
     if (typeof l === "undefined")
@@ -71,7 +71,7 @@ const obj6 = (a, b, l = 10) => {
     return a * b * l;
 };
 /*
-    ? Rest Operation
+  TODO:  Rest Operation
 */
 const f1 = (...rest) => {
     return rest;
@@ -85,7 +85,7 @@ function f3(n) {
     return -1;
 }
 /*
-    ? Function with Object
+    TODO:  Function with Object
 */
 const getData = (product) => {
     console.log("product :>> ", product);
@@ -110,7 +110,7 @@ const errHandler1 = () => {
 };
 const t1 = "light";
 /*
-    ? Classes
+    TODO:  Classes
     * By default public
     * we can access private element of class b/c there is not access modifier in js but can ~ update it
     * In protected, derived class will have public method & private can~ be accessed from children class
@@ -132,15 +132,199 @@ class Boy {
         this.weight = weight;
         this.power = power;
         this.getMyHeight = () => this.height;
+        this.id = String(Math.random() * 100);
     }
 }
 let v1 = new Boy(1, 2, 3);
 console.log("v1.getMyHeight()", v1.getMyHeight());
-class Player2 extends Player {
+class Player2 extends Boy {
     constructor(special, height, weight, power) {
-        super(weight, power);
+        super(height, weight, power);
         this.special = special;
+    }
+    getMyPower() {
+        return this.power;
     }
 }
 let l1 = new Player2(false, 2, 1, 2);
-console.log("l1.weight", l1.height);
+console.log("l1.weight", l1.weight);
+console.log("l1.getMyHeight()", l1.getMyHeight());
+console.log("l1.getMyPower()", l1.getMyPower());
+console.log("l1.id", l1.id);
+class Box {
+    constructor(height, weight) {
+        this.height = height;
+        this.weight = weight;
+    }
+    get getBoxHeight() {
+        return this.height;
+    }
+    set setBoxHeight(v) {
+        this.height = v;
+    }
+}
+let b1 = new Box(24, 12);
+console.log("b1.getBoxHeight", b1.getBoxHeight);
+b1.setBoxHeight = 123;
+console.log("b1.getBoxHeight", b1.getBoxHeight);
+class Product1 {
+    constructor(name, price, stock) {
+        this.id = String(Math.random() * 100);
+        this.getId = () => this.id;
+        this.getMyName = () => this.name;
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+    }
+}
+const obj21 = new Product1("Desktop", 20000, 2);
+console.log("obj21.getId()", obj21.getId());
+console.log("obj21.getMyName()", obj21.getMyName());
+class Product21 {
+    constructor(name, price, stock) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+        this.id = String(Math.random() * 100);
+        this.getId = () => this.id;
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+    }
+}
+/*
+  TODO:  Type Assertion - DOM Manipulation
+*/
+let btn = document.getElementById("btn");
+let btn1 = document.getElementById("btn");
+//* Anything but ~ null
+let btn2 = document.getElementById("btn");
+btn.onclick;
+let myimg = document.getElementById("myimg");
+myimg.src;
+let myForm = document.getElementById("myForm");
+let myInput = document.querySelector("#myForm > input");
+myForm.onsubmit = (e) => {
+    e.preventDefault();
+    const val = Number(myInput.value);
+    console.log("val", val);
+    console.log("typeof val", typeof val);
+    // myForm.appendChild(`<div>${val + 20}</div>`);
+    const myDiv = document.createElement("div");
+    myDiv.innerHTML = `${val + 20}`;
+    myForm.appendChild(myDiv);
+};
+const myObj = {
+    name: "vishal",
+    email: "yadav11adu@gmail.com",
+};
+const getName = () => myObj["name"];
+const getEmail = () => myObj["email"];
+let getData1 = (key) => {
+    return myObj[key];
+};
+const myObj1 = {
+    name: "vishal",
+    email: "yadav11adu@gmail.com",
+};
+const getName1 = () => myObj1["name"];
+const getEmail1 = () => myObj1["email"];
+let getData2 = (key) => {
+    return myObj[key];
+};
+//
+let key = "name";
+console.log("myobj1[key of keyof PersonType1]", myObj1[key]);
+console.log("myobj1[key of keyof typeof PersonType1]", myObj1[key]);
+let obj1213 = {
+    name: "vkumar786",
+    email: "vkumar@onemindservices.com",
+    isMale: true,
+};
+const users = {
+    vishal: {
+        age: 20,
+    },
+    vivek: {
+        age: 18,
+    },
+    yash: {
+        age: 22,
+    },
+};
+//* Parameters<Type>
+const myFunc = (a, b) => {
+    console.log("a + b", a + b);
+};
+const obj123 = {
+    weight: 123,
+    height: 123,
+    getBoxHeight: 0,
+    setBoxHeight: 0,
+};
+/*
+  TODO: Generic
+*/
+const fun1 = (n) => {
+    return n;
+};
+let lk1 = fun1(123);
+let lk2 = fun1("asdf");
+let lk3 = fun1(false);
+const fun2 = (data) => {
+    return data;
+};
+console.log("fun2(myObj1)", fun2(myObj1));
+console.log("fun2(myObj1)", fun2(myObj1));
+let arr32 = [];
+//* More than one Generic
+const fun3 = (data, pickChu) => {
+    return {
+        data,
+        pickChu,
+    };
+};
+const fun4 = (data, pickChu) => {
+    return {
+        data,
+        pickChu,
+    };
+};
+//* Extends with generic - it means that prev value must be there and much more..
+const fun5 = (data, pick) => {
+    return {
+        data,
+        pick,
+    };
+};
+console.log("fun5(123,123)", fun5(123, 123));
+console.log("fun5(123,123)", fun5(123, 123));
+const p1Ex = {
+    name: "vishal",
+    email: "vkumar@onemindservices.com",
+};
+const p2Ex = {
+    name: "vivek",
+    email: "vKumar@onemindservices.com",
+    isMale: true,
+};
+console.log("fun5<p1,p2>(p1Ex, p2Ex)", fun5(p1Ex, p2Ex));
+const u1 = [
+    {
+        name: "vishal",
+        email: "vkumar@onemindservies.com",
+        age: 209,
+    },
+    {
+        name: "vivek",
+        email: "vkumar@onemindservies.com",
+        age: 20,
+    },
+];
+const filterByPeoples = (arr, property, value) => {
+    return arr.filter((item) => {
+        return item[property] === value;
+    });
+};
+console.log("filterByPeoples()", filterByPeoples(u1, "name", "vishal"));
+console.log("filterByPeoples()", filterByPeoples(u1, "age", 209));
